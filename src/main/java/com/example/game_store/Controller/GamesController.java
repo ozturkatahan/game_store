@@ -27,7 +27,7 @@ public class GamesController {
     }
 
     @RequestMapping (path = "/saveGames", method = RequestMethod.POST,consumes = "application/json")
-    public @ResponseBody HttpStatus saveCategoryController(@RequestBody Games games){
+    public @ResponseBody HttpStatus saveGamesController(@RequestBody Games games){
 
 
         try{

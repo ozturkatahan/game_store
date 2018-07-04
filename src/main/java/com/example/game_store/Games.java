@@ -3,6 +3,7 @@ package com.example.game_store;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Locale;
 
 @Data
 @Entity
@@ -11,9 +12,23 @@ public class Games {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-
     String name;
-    String category;
+    double gameSize;
+    int ageLimit;
+
+
+    @ManyToOne
+    Seller seller;
+
+    @ManyToOne
+    Categories category;
+
+    @ManyToOne
+    Language language;
+
+
+
+
+
 
 }
