@@ -16,6 +16,6 @@ public class Categories {
 
         @OneToMany
         List<Games> category;
-
+//
 
 }
