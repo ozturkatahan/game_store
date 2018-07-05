@@ -1,7 +1,7 @@
 package com.example.game_store.Service;
 
 
-import com.example.game_store.Games;
+import com.example.game_store.Entity.Games;
 import com.example.game_store.Repository.GamesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +30,7 @@ GamesRepository gamesRepository;
 
 
     public void saveGamesService(Games games){
+
         gamesRepository.save(games);
     }
 

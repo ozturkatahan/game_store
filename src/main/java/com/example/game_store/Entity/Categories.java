@@ -1,4 +1,4 @@
-package com.example.game_store;
+package com.example.game_store.Entity;
 
 import lombok.Data;
 
@@ -14,8 +14,8 @@ public class Categories {
         private Long idCategories;
         String nameCategory;
 
-        @OneToMany
-        List<Games> category;
+        @OneToMany(mappedBy = "category")
+        List<Games> games;
 
 
 }

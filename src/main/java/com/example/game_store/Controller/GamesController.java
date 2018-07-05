@@ -1,6 +1,6 @@
 package com.example.game_store.Controller;
 
-import com.example.game_store.Games;
+import com.example.game_store.Entity.Games;
 import com.example.game_store.Service.GamesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,18 +13,13 @@ import java.util.List;
 @Controller
 @ResponseBody
 @RequestMapping(value = "/api/games")
-
 public class GamesController {
     @Autowired
     GamesService gamesService;
 
     @RequestMapping (path = "/listGames",method = RequestMethod.GET)
     @ResponseBody
-    public List<Games> getGamesAllController() {
-
-        return gamesService.getGamesAllService();
-
-    }
+    public List<Games> getGamesAllController() { return gamesService.getGamesAllService(); }
 
     @RequestMapping (path = "/saveGames", method = RequestMethod.POST,consumes = "application/json")
     public @ResponseBody HttpStatus saveGamesController(@RequestBody Games games){

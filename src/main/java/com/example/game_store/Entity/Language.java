@@ -1,9 +1,10 @@
-package com.example.game_store;
+package com.example.game_store.Entity;
 
 
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -13,5 +14,9 @@ public class Language {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idLanguage;
     String language;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinTable(name = "language_games")
+    Games games;
 
 }

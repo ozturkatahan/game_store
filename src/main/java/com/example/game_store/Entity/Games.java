@@ -1,9 +1,9 @@
-package com.example.game_store;
+package com.example.game_store.Entity;
 
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Locale;
+import java.util.List;
 
 @Data
 @Entity
@@ -14,17 +14,20 @@ public class Games {
     private Long id;
     String name;
     double gameSize;
+
     int ageLimit;
 
 
     @ManyToOne
+    @JoinColumn(name = "seller")
     Seller seller;
 
     @ManyToOne
+    @JoinColumn(name = "category")
     Categories category;
 
-    @ManyToOne
-    Language language;
+    @OneToMany(mappedBy = "games")
+        List<Language> language;
 
 
 
