@@ -20,11 +20,11 @@ public class CategoriesController {
     @Autowired
     CategoriesService categoriesService;
 
-    @RequestMapping(path = "/listLanguage",method = RequestMethod.GET)
+    @RequestMapping(path = "/listCategories",method = RequestMethod.GET)
     @ResponseBody
-    public List<Categories> getLanguageAllController() { return categoriesService.getCategoriesAllService(); }
+    public Categories getCategoriesAllController(Long id) { return categoriesService.getCategoriesAllService(id); }
 
-    @RequestMapping(path = "/saveLanguage", method = RequestMethod.POST,consumes = "application/json")
+    @RequestMapping(path = "/saveCategories", method = RequestMethod.POST,consumes = "application/json")
     public @ResponseBody
     HttpStatus saveCategoriesController(@RequestBody Categories categories){
 

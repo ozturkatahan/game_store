@@ -1,5 +1,6 @@
 package com.example.game_store.Entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,16 +19,17 @@ public class Games {
     int ageLimit;
 
 
-    @ManyToOne
-    @JoinColumn(name = "seller")
-    Seller seller;
+//    @ManyToOne
+//    @JoinColumn(name = "seller")
+//    Seller seller;
+//
+//    @ManyToOne
+//    @JoinColumn(name = "category")
+//    Categories category;
 
-    @ManyToOne
-    @JoinColumn(name = "category")
-    Categories category;
 
     @OneToMany(mappedBy = "games")
-        List<Language> language;
+     List<Language> language;
 
 
 

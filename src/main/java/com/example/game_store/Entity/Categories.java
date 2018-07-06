@@ -14,8 +14,8 @@ public class Categories {
         private Long idCategories;
         String nameCategory;
 
-        @OneToMany(mappedBy = "category")
-        List<Games> games;
+//        @OneToMany(mappedBy = "category")
+//        List<Games> games;
 
 
 }

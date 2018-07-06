@@ -16,7 +16,7 @@ public class Seller {
     private Long idSeller;
     String sellerName;
 
-   @OneToMany (mappedBy = "seller")
-   List<Games> games;
+//   @OneToMany (mappedBy = "seller")
+//   List<Games> games;
 
 }

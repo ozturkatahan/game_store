@@ -1,6 +1,7 @@
 package com.example.game_store.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,8 +16,8 @@ public class Language {
     private Long idLanguage;
     String language;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinTable(name = "language_games")
+    @JsonBackReference
+    @ManyToOne
     Games games;
 
 }

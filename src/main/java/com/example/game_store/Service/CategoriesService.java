@@ -13,8 +13,8 @@ public class CategoriesService {
     @Autowired
     CategoriesRepository categoriesRepository;
 
-    public List<Categories> getCategoriesAllService() {
-        return categoriesRepository.findAll();
+    public Categories getCategoriesAllService(Long id) {
+        return categoriesRepository.findOne(id);
 
     }
 
