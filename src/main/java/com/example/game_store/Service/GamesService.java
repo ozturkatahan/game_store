@@ -11,29 +11,28 @@ import java.util.List;
 @Service
 public class GamesService {
 
- @Autowired
-GamesRepository gamesRepository;
+    @Autowired
+    GamesRepository gamesRepository;
 
 
     public List<Games> getGamesAllService() {
-         return gamesRepository.findAll();
+        return gamesRepository.findAll();
 
     }
 
-    public Games findGames (Long id) {
+    public Games findGames(Long id) {
         return gamesRepository.findDistrictById(id);
     }
 
-    public void  deleteGames (Long id) {
-         gamesRepository.delete(id);
+    public void deleteGames(Long id) {
+        gamesRepository.delete(id);
     }
 
 
-    public void saveGamesService(Games games){
+    public void saveGamesService(Games games) {
 
         gamesRepository.save(games);
     }
-
 
 
 }

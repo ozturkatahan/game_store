@@ -20,18 +20,26 @@ public class CategoriesController {
     @Autowired
     CategoriesService categoriesService;
 
-    @RequestMapping(path = "/listCategories",method = RequestMethod.GET)
+    @RequestMapping(path = "/listCategoriesWithId", method = RequestMethod.GET)
     @ResponseBody
-    public Categories getCategoriesAllController(Long id) { return categoriesService.getCategoriesAllService(id); }
+    public Categories getCategoriesAllController(Long id) {
+        return categoriesService.getCategoriesAllService(id);
+    }
 
-    @RequestMapping(path = "/saveCategories", method = RequestMethod.POST,consumes = "application/json")
+    @RequestMapping(path = "/listCategories", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Categories> categoriesListAll() {
+        return categoriesService.getCategoriesAll();
+    }
+
+
+    @RequestMapping(path = "/saveCategories", method = RequestMethod.POST, consumes = "application/json")
     public @ResponseBody
-    HttpStatus saveCategoriesController(@RequestBody Categories categories){
+    HttpStatus saveCategoriesController(@RequestBody Categories categories) {
 
         try {
             categoriesService.saveCategoriesService(categories);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
 
             System.out.println("Exception occurred");
 

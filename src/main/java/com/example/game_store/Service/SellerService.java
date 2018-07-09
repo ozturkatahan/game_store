@@ -19,7 +19,7 @@ public class SellerService {
     }
 
 
-    public void saveSellerService (Seller seller){
+    public void saveSellerService(Seller seller) {
 
         sellerRepository.save(seller);
     }

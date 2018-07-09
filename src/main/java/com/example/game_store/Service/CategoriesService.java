@@ -18,8 +18,13 @@ public class CategoriesService {
 
     }
 
+    public List<Categories> getCategoriesAll() {
+        return (List<Categories>) categoriesRepository.findAll();
 
-    public void saveCategoriesService (Categories language){
+    }
+
+
+    public void saveCategoriesService(Categories language) {
         categoriesRepository.save(language);
     }
 }

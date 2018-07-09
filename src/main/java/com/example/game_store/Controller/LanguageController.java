@@ -21,17 +21,19 @@ public class LanguageController {
     LanguageService languageService;
 
 
-    @RequestMapping (path = "/listLanguage",method = RequestMethod.GET)
+    @RequestMapping(path = "/listLanguage", method = RequestMethod.GET)
     @ResponseBody
-    public List<Language> getLanguageAllController() { return languageService.getLanguageAllService(); }
+    public List<Language> getLanguageAllController() {
+        return languageService.getLanguageAllService();
+    }
 
-    @RequestMapping(path = "/saveLanguage", method = RequestMethod.POST,consumes = "application/json")
-    public @ResponseBody HttpStatus saveLanguageController(@RequestBody Language language){
+    @RequestMapping(path = "/saveLanguage", method = RequestMethod.POST, consumes = "application/json")
+    public @ResponseBody
+    HttpStatus saveLanguageController(@RequestBody Language language) {
 
         try {
             languageService.saveLanguageService(language);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
 
             System.out.println("Exception occurred");
 

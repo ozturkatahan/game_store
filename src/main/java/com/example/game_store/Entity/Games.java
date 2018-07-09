@@ -19,21 +19,15 @@ public class Games {
     int ageLimit;
 
 
-//    @ManyToOne
-//    @JoinColumn(name = "seller")
-//    Seller seller;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "category")
-//    Categories category;
+    @ManyToOne
+    Seller seller;
 
+    @ManyToOne
+    Categories category;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "games")
-     List<Language> language;
-
-
-
-
+    List<Language> language;
 
 
 }

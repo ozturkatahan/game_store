@@ -17,36 +17,39 @@ public class GamesController {
     @Autowired
     GamesService gamesService;
 
-    @RequestMapping (path = "/listGames",method = RequestMethod.GET)
+    @RequestMapping(path = "/listGames", method = RequestMethod.GET)
     @ResponseBody
-    public List<Games> getGamesAllController() { return gamesService.getGamesAllService(); }
+    public List<Games> getGamesAllController() {
+        return gamesService.getGamesAllService();
+    }
 
-    @RequestMapping (path = "/saveGames", method = RequestMethod.POST,consumes = "application/json")
-    public @ResponseBody HttpStatus saveGamesController(@RequestBody Games games){
+    @RequestMapping(path = "/saveGames", method = RequestMethod.POST, consumes = "application/json")
+    public @ResponseBody
+    HttpStatus saveGamesController(@RequestBody Games games) {
 
 
-        try{
+        try {
             gamesService.saveGamesService(games);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Exception occurred");
         }
         return HttpStatus.OK;
-}
+    }
 
 
-    @RequestMapping (path = "/findGamesById/{id}", method = RequestMethod.GET)
-    public @ResponseBody Games getFindGamesWithId(@PathVariable Long id) {
+    @RequestMapping(path = "/findGamesById/{id}", method = RequestMethod.GET)
+    public @ResponseBody
+    Games getFindGamesWithId(@PathVariable Long id) {
         return gamesService.findGames(id);
     }
 
-    @RequestMapping (path= "/deleteGamesById/{id}", method = RequestMethod.DELETE)
-    public @ResponseBody HttpStatus deleteGamesWithId(@PathVariable Long id) {
+    @RequestMapping(path = "/deleteGamesById/{id}", method = RequestMethod.DELETE)
+    public @ResponseBody
+    HttpStatus deleteGamesWithId(@PathVariable Long id) {
 
-        try{
+        try {
             gamesService.deleteGames(id);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Exception occurred");
         }
         return HttpStatus.OK;

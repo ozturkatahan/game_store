@@ -1,6 +1,7 @@
 package com.example.game_store.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,7 +17,8 @@ public class Seller {
     private Long idSeller;
     String sellerName;
 
-//   @OneToMany (mappedBy = "seller")
-//   List<Games> games;
+    @JsonBackReference
+    @OneToMany(mappedBy = "seller")
+    List<Games> games;
 
 }

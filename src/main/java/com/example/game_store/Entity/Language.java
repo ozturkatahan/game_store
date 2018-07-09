@@ -16,7 +16,7 @@ public class Language {
     private Long idLanguage;
     String language;
 
-    @JsonBackReference
+
     @ManyToOne
     Games games;
 

@@ -8,12 +8,12 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface GamesRepository extends CrudRepository<Games,Long> {
+public interface GamesRepository extends CrudRepository<Games, Long> {
 
 
     List<Games> findAll();
-    Games findDistrictById(@Param("id") Long id);
 
+    Games findDistrictById(@Param("id") Long id);
 
 
 }

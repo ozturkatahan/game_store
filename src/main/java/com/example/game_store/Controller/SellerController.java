@@ -22,18 +22,19 @@ public class SellerController {
     SellerService sellerService;
 
 
-    @RequestMapping(path = "/listSeller",method = RequestMethod.GET)
+    @RequestMapping(path = "/listSeller", method = RequestMethod.GET)
     @ResponseBody
-    public List<Seller> getSellerAllController() { return sellerService.getSellerAllService(); }
+    public List<Seller> getSellerAllController() {
+        return sellerService.getSellerAllService();
+    }
 
-    @RequestMapping(path = "/saveSeller", method = RequestMethod.POST,consumes = "application/json")
+    @RequestMapping(path = "/saveSeller", method = RequestMethod.POST, consumes = "application/json")
     public @ResponseBody
-    HttpStatus saveSellerController(@RequestBody Seller seller){
+    HttpStatus saveSellerController(@RequestBody Seller seller) {
 
         try {
             sellerService.saveSellerService(seller);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
 
             System.out.println("Exception occurred");
 
