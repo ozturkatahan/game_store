@@ -19,5 +19,5 @@ public class Categories {
     @OneToMany(mappedBy = "category")
     List<Games> games;
 
-
+//
 }
