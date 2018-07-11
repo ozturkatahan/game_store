@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="angular/angular.min.js"></script>
+<script src="angular/bootstrap.bundle.min.js"></script>
+<script src="angular/bootstrap.min.js"></script>
+<script src="/category.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div ng-init="pageOpen()" ng-app="GameStoreApplication" ng-controller="CategoriesController">
+    <form>
+        <label>Category</label>
+        <select ng-model="category" ng-options="c as c.nameCategory for c in categoryList" ng-change="findGames()"></select>
+        <label>Games</label>
+        <select ng-model="category.games" ng-options="c as c.name for c in gamesList"></select>
+    </form>
+</div>
+</body>
+</html>
