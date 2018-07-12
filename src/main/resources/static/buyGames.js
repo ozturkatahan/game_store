@@ -4,12 +4,12 @@ var  myApp = angular.module('GameStoreApplication',[]).controller('CategoriesCon
     $scope.category = {}
     $scope.categoryList = [];
 
-    $scope.pageOpen = function () {
-
-        $scope.listCategories();
-
-
-    };
+    // $scope.pageOpen = function () {
+    //
+    //     $scope.listCategories();
+    //
+    //
+    // };
 
     $scope.findGames = function () {
 
@@ -41,5 +41,7 @@ var  myApp = angular.module('GameStoreApplication',[]).controller('CategoriesCon
         })
 
     }
+
+
 
 });

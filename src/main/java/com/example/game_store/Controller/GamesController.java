@@ -43,12 +43,12 @@ public class GamesController {
         return gamesService.findGames(id);
     }
 
-    @RequestMapping(path = "/deleteGamesById/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(path = "/deleteGames", method = RequestMethod.POST)
     public @ResponseBody
-    HttpStatus deleteGamesWithId(@PathVariable Long id) {
+    HttpStatus deleteGamesWithId(@RequestBody Games games) {
 
         try {
-            gamesService.deleteGames(id);
+            gamesService.deleteGames(games);
         } catch (Exception e) {
             System.out.println("Exception occurred");
         }

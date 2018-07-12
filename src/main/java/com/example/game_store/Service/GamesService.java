@@ -24,8 +24,8 @@ public class GamesService {
         return gamesRepository.findDistrictById(id);
     }
 
-    public void deleteGames(Long id) {
-        gamesRepository.delete(id);
+    public void deleteGames(Games games) {
+        gamesRepository.delete(games);
     }
 
 
