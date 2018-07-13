@@ -17,7 +17,7 @@ public class Games {
     double gameSize;
 
     int ageLimit;
-
+//
 
     @ManyToOne
     Seller seller;

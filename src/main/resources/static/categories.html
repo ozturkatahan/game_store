@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script src="angular/angular.min.js"></script>
+<script src="angular/bootstrap.bundle.min.js"></script>
+<script src="angular/bootstrap.min.js"></script>
+<script src="games.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+
+    table, th, td {
+        border: 2px solid black;
+        padding: 6px;
+        width: 35%;
+    }
+
+    table {
+        border-spacing: 15px;
+    }
+    /* Remove the navbar's default rounded borders and increase the bottom margin */
+    .navbar {
+        margin-bottom: 50px;
+        border-radius: 0;
+    }
+
+    /* Remove the jumbotron's default bottom margin */
+    .jumbotron {
+        margin-bottom: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+        background-color: #f2f2f2;
+        padding: 25px;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Ata Store</h1>
+        <p>Best for You</p>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+
+<form>
+    <div ng-init="pageOpen()" ng-app="GameStoreApplication" ng-controller="GamesController">
+
+        <div class ="form-group">
+            <label>Games</label>
+            <select ng-model="games" ng-options="games as games.name for games in gamesList"></select>
+
+        </div>
+
+        <label for="category">Category</label>
+        <div class="form-group">
+
+            <input type="text" class="form-control" id="category" ng-model="games.category.nameCategory" placeholder="Category">
+        </div>
+
+
+
+        <button type="button" class="btn btn-primary" ng-click="saveCategories()">SAVE</button>
+
+
+        <table>
+            <thead>
+
+            <tr>
+
+                <th>Name</th>
+                <th>Size</th>
+                <th>Age Limit</th>
+                <th>Category</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="games in gamesList">
+                <td>{{games.name}}</td>
+                <td>{{games.gameSize}} mb</td>
+                <td>{{games.ageLimit}}+</td>
+                <td>{{games.category.nameCategory}}</td>
+                <td> <button type="button" class="btn btn-primary" ng-click="selectGame(games)">UPDATE</button> </td>
+                <td> <button type="button" class="btn btn-danger" ng-click="deleteGame(games)">DELETE</button> </td>
+
+            </tr>
+            </tbody>
+        </table>
+
+
+
+    </div>
+</form>
+    </div>
+</div>
+</body>
+</html>
